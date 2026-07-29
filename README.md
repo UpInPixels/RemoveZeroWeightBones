@@ -25,6 +25,10 @@ It checks all **Skinned Mesh Renderers** bound to the assigned armature and safe
 
 ### Option 1: Via VRChat Companion App (VCC)
 
+[![Add to VCC](https://img.shields.io/badge/VCC-Add%20to%20VCC-36a64f?style=for-the-badge&logo=vrchat&logoColor=white)](https://upinpixels.github.io/UpInPixels-Utilities/)
+
+or
+
 1. Open **VRChat Companion App (VCC)**.
 2. Go to **Settings** -> **Packages** -> **Add Repository**.
 3. Paste the VCC listing URL:
