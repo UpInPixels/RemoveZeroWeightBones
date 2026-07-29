@@ -1,57 +1,72 @@
 # Remove Zero Weight Bones
 
-An editor utility tool for Unity and VRChat avatars that cleans up unused skinning bones with zero weights. Optimizes avatar performance, reduces hierarchy clutter, and improves project maintainability.
+An Editor utility for Unity that cleans up unused zero-weight bone GameObjects from your avatar or model hierarchy.
+
+It checks all **Skinned Mesh Renderers** bound to the assigned armature and safely deletes unweighted bones (bottom-up) while explicitly keeping parent transforms, root bones, and active mesh renderers intact.
 
 ---
 
-## 🚀 Installation
+## 🚀 Features
 
-### Option 1: Via VRChat Companion App (VCC) — Recommended
+* 🧹 **Zero Weight Hierarchy Cleanup:** Detects and deletes bone transforms that have zero mesh vertex weights assigned across all associated SkinnedMeshRenderers.
+* 🔒 **Twist Bone Protection:** Built-in option to automatically preserve twist bones (bones with `twist` in the name or starting with `_`) and their parent chains.
+* ⚡ **Safe Deletion:**
+* Deletes child bones first (depth-sorted) to preserve hierarchy integrity.
+* Automatically skips objects containing **Renderers** or **Colliders**.
+* Includes options to safeguard or remove bones containing extra components (e.g., PhysBones).
+
+
+* ↩️ **Undo Support:** All deletions are integrated into Unity's Undo system (`Ctrl + Z` / `Cmd + Z`).
+* 📑 **In-Editor Logging:** Built-in summary counter and detailed log window directly inside the Editor GUI.
+
+---
+
+## 📦 Installation
+
+### Option 1: Via VRChat Companion App (VCC)
 
 1. Open **VRChat Companion App (VCC)**.
 2. Go to **Settings** -> **Packages** -> **Add Repository**.
-3. Enter the listing URL:
+3. Paste the VCC listing URL:
 `[https://UpInPixels.github.io/UpInPixels-Utilities/index.json](https://UpInPixels.github.io/UpInPixels-Utilities/index.json)`
-4. Find **Remove Zero Weight Bones** in your project package list and click **Add**.
+4. Add **Remove Zero Weight Bones** to your VCC project.
 
 ---
 
-### Option 2: Manual Installation (Unity Package Manager)
+### Option 2: Unity Package Manager (Git URL)
 
-1. In Unity, open **Window > Package Manager**.
-2. Click the **`+`** icon in the top left corner and select **Add package from git URL...**.
-3. Enter the HTTPS repository URL:
+1. Open your Unity project.
+2. Go to **Window > Package Manager**.
+3. Click the **`+`** icon in the top-left corner -> **Add package from git URL...**.
+4. Enter:
 `[https://github.com/UpInPixels/RemoveZeroWeightBones.git?path=/Packages/com.upinpixels.removezeroweightbones](https://github.com/UpInPixels/RemoveZeroWeightBones.git?path=/Packages/com.upinpixels.removezeroweightbones)`
 
 ---
 
-## 🛠️ Features
+## 📖 Usage
 
-* 🧹 **Automatic Scanning:** Scans Skinned Mesh Renderers on your selected avatar/model for bones assigned 0 weight across all vertices.
-* ⚡ **Optimization:** Safely strips unused bone transforms from the avatar hierarchy and mesh bindposes.
-* 🔒 **Safe Mode:** Preserves crucial root bones, human body bones, and custom-flagged dynamic bones/constraints.
-* 📑 **Clean Logging:** Displays a clear log in the Unity Console highlighting removed bones and performance improvements.
+1. Open the tool from the top menu bar:
+**`Tools > UpInPixels > Remove Zero Weight Bones`**
+2. Assign your armature object to the **Armature Root** field *(select the `Armature` root bone transform, not the main avatar root object)*.
+3. Configure your options:
+* **Keep Twist Bones:** Prevents deletion of twist bones (`*twist*` or starting with `_`).
+* **Delete Empty Parent Bones:** Allows deletion of zero-weight bones that carry extra components (like PhysBones) once their children are removed.
 
----
 
-## 📖 Usage Guide
-
-1. Select your Avatar or Model root object in the Unity Hierarchy.
-2. Navigate to **`Tools > UpInPixels > Remove Zero Weight Bones`** in the top menu bar.
-3. Review the detected zero-weight bones in the preview window.
-4. Click **`Process & Clean Bones`**.
+4. Click **Remove Zero Weight Bones**.
 
 ---
 
-## 🔧 Requirements
+## ⚙️ Requirements
 
-* **Unity Version:** 2022.3.x or newer (compatible with Unity 2019/2021)
-* **VRChat SDK:** VRChat SDK3 (Avatars) *[Optional]*
+* **Unity Version:** 2019.4 / 2021.3 / 2022.3 or newer
+* **Module:** Unity Editor (Editor script only)
 
 ---
 
-## 👤 Author & Support
+## 👤 Author
 
-* **Author:** Uppy ([UpInPixels](https://payhip.com/upinpixels))
-* **Utilities Repo:** [UpInPixels-Utilities](https://www.google.com/search?q=https://github.com/UpInPixels/UpInPixels-Utilities)
-* **Issues / Feedback:** Open an issue on the [GitHub Repository](https://www.google.com/search?q=https://github.com/UpInPixels/RemoveZeroWeightBones/issues).
+Developed by **UpInPixels** (Uppy)
+
+* **Store:** [Payhip](https://payhip.com/upinpixels)
+* **Main Repo:** [UpInPixels-Utilities](https://www.google.com/search?q=https://github.com/UpInPixels/UpInPixels-Utilities)
