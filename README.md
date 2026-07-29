@@ -6,22 +6,22 @@ It checks all **Skinned Mesh Renderers** bound to the assigned armature and safe
 
 ---
 
-## 🚀 Features
+## Features
 
-* 🧹 **Zero Weight Hierarchy Cleanup:** Detects and deletes bone transforms that have zero mesh vertex weights assigned across all associated SkinnedMeshRenderers.
-* 🔒 **Twist Bone Protection:** Built-in option to automatically preserve twist bones (bones with `twist` in the name or starting with `_`) and their parent chains.
-* ⚡ **Safe Deletion:**
+* **Zero Weight Hierarchy Cleanup:** Detects and deletes bone transforms that have zero mesh vertex weights assigned across all associated SkinnedMeshRenderers.
+* **Twist Bone Protection:** Built-in option to automatically preserve twist bones (bones with `twist` in the name or starting with `_`) and their parent chains.
+* **Safe Deletion:**
 * Deletes child bones first (depth-sorted) to preserve hierarchy integrity.
 * Automatically skips objects containing **Renderers** or **Colliders**.
 * Includes options to safeguard or remove bones containing extra components (e.g., PhysBones).
 
 
-* ↩️ **Undo Support:** All deletions are integrated into Unity's Undo system (`Ctrl + Z` / `Cmd + Z`).
-* 📑 **In-Editor Logging:** Built-in summary counter and detailed log window directly inside the Editor GUI.
+* **Undo Support:** All deletions are integrated into Unity's Undo system (`Ctrl + Z` / `Cmd + Z`).
+* **In-Editor Logging:** Built-in summary counter and detailed log window directly inside the Editor GUI.
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Option 1: Via VRChat Companion App (VCC)
 
@@ -43,7 +43,7 @@ It checks all **Skinned Mesh Renderers** bound to the assigned armature and safe
 
 ---
 
-## 📖 Usage
+## Usage
 
 1. Open the tool from the top menu bar:
 **`Tools > UpInPixels > Remove Zero Weight Bones`**
@@ -57,14 +57,14 @@ It checks all **Skinned Mesh Renderers** bound to the assigned armature and safe
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 * **Unity Version:** 2019.4 / 2021.3 / 2022.3 or newer
 * **Module:** Unity Editor (Editor script only)
 
 ---
 
-## 👤 Author
+## Author
 
 Developed by **UpInPixels** (Uppy)
 
