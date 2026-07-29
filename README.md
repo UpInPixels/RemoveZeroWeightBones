@@ -1,4 +1,4 @@
-# Remove Zero Weight Bones
+# Remove Zero Weight Bones [![Add to VCC](https://img.shields.io/badge/VCC-Add%20to%20VCC-36a64f?style=for-the-badge&logo=vrchat&logoColor=white)](https://upinpixels.github.io/UpInPixels-Utilities/)
 
 An Editor utility for Unity that cleans up unused zero-weight bone GameObjects from your avatar or model hierarchy.
 
